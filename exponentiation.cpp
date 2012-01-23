@@ -5,18 +5,14 @@ static const long double exponentiation(const long double base, const unsigned c
 
 	long double a;
 	
-	if (exponent == 0) {
+	if (exponent < 2) {
 		a = 1;
-
-	} else if (exponent == 1) {
-		a = base;
 
 	} else {
 		a = exponentiation(base, floor(exponent / 2));
-		a *= a * ((exponent % 2 == 1)? base: 1);
 	}
 
-	return a;
+	return a *= a * ((exponent % 2 == 1)? base: 1);
 }
 
 int main(int argc, char * * argv) {
