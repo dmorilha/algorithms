@@ -1,7 +1,6 @@
 #include <iostream>
-#include <math.h>
 
-static const long double exponentiation(const long double base, const unsigned char exponent) {
+static const long double exponentiation(const long double base, const uint8_t exponent) {
 
 	long double a;
 	
@@ -9,7 +8,7 @@ static const long double exponentiation(const long double base, const unsigned c
 		a = 1;
 
 	} else {
-		a = exponentiation(base, floor(exponent / 2));
+		a = exponentiation(base, static_cast< uint8_t >(exponent / 2));
 	}
 
 	return a *= a * ((exponent % 2 == 1)? base: 1);
