@@ -1,2 +1,5 @@
 exponentiation: exponentiation.cpp
-	g++ $< -o $@;
+	c++ $< -o $@;
+
+sieve-eratosthenes: sieve-eratosthenes.cpp
+	c++ $< -o $@;
