@@ -2,6 +2,10 @@ CXXFLAGS += -O0
 CXXFLAGS += -g
 CXXFLAGS += -std=c++17
 
+added-removed: added-removed.cc
+	g++ ${CXXFLAGS} -o $@ $<;
+	gdb -batch -ex r --args ./$@;
+
 match-n: match-n.cc
 	g++ ${CXXFLAGS} -o $@ $<;
 	gdb -batch -ex r --args ./$@;
